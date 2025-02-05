@@ -18,7 +18,7 @@ This dataset is the same as explained on [Day-to-Night Comparation github](https
 
 ### Downstream Task: Object Detection
 
-The dataset used on Downstream Task for Object Detection comes the mixed dataset, which are from Berkley Deep Drive (BDD Dataset) [BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning](https://arxiv.org/pdf/1805.04687) and the result from Super-Resolution method. The removal cause of dataset from image processing or conventional approach will be discussed later.
+The dataset used on Downstream Task for Object Detection comes the mixed dataset ("Dataset Gabungan"), which are from Berkley Deep Drive (BDD Dataset) [BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning](https://arxiv.org/pdf/1805.04687) and the result from Super-Resolution method. The removal cause of dataset from image processing or conventional approach will be discussed later.
 
 ## Methods
 
