@@ -6,7 +6,9 @@ This project employs image processing approach as explained on [Day-to-Night Com
 
 ### Super Resolution Method
 
-This dataset is the same as explained on Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation). The only difference is that the target image has a resolution of 512 x 512 pixels. While the input is 256 x 256 pixels.
+The building process of this dataset is explained on [Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation).
+
+This dataset is the same as explained on [Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation). The only difference is that the target image has a resolution of 512 x 512 pixels. While the input is 256 x 256 pixels.
 
 <div align="center">
     <a href="./">
