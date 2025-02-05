@@ -328,7 +328,7 @@ The testing image samples on object detection is done by comparing the detection
 
 <div align="center">
     <a href="./">
-        <img src="./Figures/gt_yolo.jpg" width="55%"/>
+        <img src="./Figures/gt_yolo.jpg" width="40%"/>
     </a>
 </div>
 
