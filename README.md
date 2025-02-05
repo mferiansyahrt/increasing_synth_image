@@ -14,8 +14,71 @@ The nighttime images were downscaled to 512 × 512 pixels and used as target dat
 
 The model was trained end-to-end without using a pre-trained model, ensuring it learns specific features directly from the dataset. Training was conducted on Google Colab Pro+ with an Nvidia A100 GPU. The model was developed using an unpaired SISR approach and DSR-CycleGAN with various generator architectures. Several hyperparameters were adjusted to support the research, including input and target image resolution, number of epochs, and learning rate.
 
+<div align="center">
+<table><thead>
+  <tr>
+    <th>Hyperparameter</th>
+    <th></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Dataset </td>
+    <td>Dataset Gabungan</td>
+  </tr>
+  <tr>
+    <td>Input Size</td>
+    <td>256 × 256 piksel</td>
+  </tr>
+  <tr>
+    <td>Target Size </td>
+    <td>512 × 512 piksel</td>
+  </tr>
+  <tr>
+    <td>Epoch</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>Learning Rate</td>
+    <td>0,0002</td>
+  </tr>
+  <tr>
+    <td>Training Image</td>
+    <td>70 (Paired) + 100 (Unpaired) = 170 Images</td>
+  </tr>
+  <tr>
+    <td>Testing Image</td>
+    <td>50 Images</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 In this stage, the image super-resolution model was developed using two frameworks: unpaired SISR and DSR-CycleGAN. The UNet-ViT generator from the UVCGAN model was found to deliver optimal performance. Therefore, this study utilized the UNet-ViT generator for both frameworks to facilitate domain transfer from daytime to nighttime images
+
+<div align="center">
+<table><thead>
+  <tr>
+    <th>Framework</th>
+    <th>Super-Resolution Model<br></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Unpaired SISR</td>
+    <td>UNet-ViT + ESRGAN+</td>
+  </tr>
+  <tr>
+    <td rowspan="3">DSR-CycleGAN</td>
+    <td>UNet-ViT + Upsampling</td>
+  </tr>
+  <tr>
+    <td>UNet-ViT + ESRGAN+</td>
+  </tr>
+  <tr>
+    <td>UNet-ViT + Enlighten-GAN</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Various image super-resolution models were explored, each paired with a corresponding upscaling model. As previously explained, the UNet-ViT generator was used for domain transfer, while the upscaling model handled spatial resolution enhancement.
 
