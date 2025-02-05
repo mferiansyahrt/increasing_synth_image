@@ -247,7 +247,7 @@ During the model testing phase, the input images were daytime images with a reso
 
 <div align="center">
     <a href="./">
-        <img src="./Figures/citra_input_git.png.png" width="74%"/>
+        <img src="./Figures/citra_input_git.png" width="74%"/>
     </a>
 </div>
 
@@ -258,3 +258,5 @@ The output images from the different framework and generator variations are disp
         <img src="./Figures/visualisasi_SR_git.png" width="74%"/>
     </a>
 </div>
+
+The UNet-ViT+Upsampling generator in DSR-CycleGAN provides the best quantitative evaluation and visually produces the most accurate "nighttime" scenes. This is supported by the FID evaluation metric, which aligns with human perceptual functions. Light artifacts in the UNet-ViT+ESRGAN+ or UNet-ViT+EnlightenGAN generators affect the evaluation scores of the images. However, the UNet-ViT+Upsampling generator still cannot produce optimal synthetic nighttime SR images for paired images. The target images in the paired dataset are also synthetic, meaning the generated images are highly dependent on the conventional methods used. Nevertheless, the synthetic nighttime SR images generated are visually aligned with those in the BDD dataset. The SSIM quantitative evaluation for UNet-ViT+Upsampling represents the optimal model. Visually, this generator produces superior illumination and contrast, but structurally, it remains less optimal. In contrast, the other two generators have better structure but still lack optimal illumination and contrast.
