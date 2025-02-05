@@ -270,6 +270,7 @@ The synthetic nighttime SR images from the DSR-CycleGAN framework with the UNet-
 
 For the unpaired SISR framework and the UNet-ViT+EnlightenGAN generator, no significant performance improvement was observed in YOLOv7 compared to the baseline with the BDD dataset. The generated images did not accurately represent nighttime scenes, leading to poorer generalization during YOLOv7 training, resulting in decreased performance.
 
+<div align="center">
 <table><thead>
   <tr>
     <th colspan="2" rowspan="2"></th>
@@ -319,6 +320,7 @@ For the unpaired SISR framework and the UNet-ViT+EnlightenGAN generator, no sign
     <td>0,592 (+0,019)</td>
   </tr>
 </tbody></table>
+</div>
 
 #### Visualization
 
@@ -326,7 +328,7 @@ The testing image samples on object detection is done by comparing the detection
 
 <div align="center">
     <a href="./">
-        <img src="./Figures/gt_yolo.jpg" width="74%"/>
+        <img src="./Figures/gt_yolo.jpg" width="55%"/>
     </a>
 </div>
 
