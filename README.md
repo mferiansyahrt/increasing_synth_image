@@ -260,3 +260,62 @@ The output images from the different framework and generator variations are disp
 </div>
 
 The UNet-ViT+Upsampling generator in DSR-CycleGAN provides the best quantitative evaluation and visually produces the most accurate "nighttime" scenes. This is supported by the FID evaluation metric, which aligns with human perceptual functions. Light artifacts in the UNet-ViT+ESRGAN+ or UNet-ViT+EnlightenGAN generators affect the evaluation scores of the images. However, the UNet-ViT+Upsampling generator still cannot produce optimal synthetic nighttime SR images for paired images. The target images in the paired dataset are also synthetic, meaning the generated images are highly dependent on the conventional methods used. Nevertheless, the synthetic nighttime SR images generated are visually aligned with those in the BDD dataset. The SSIM quantitative evaluation for UNet-ViT+Upsampling represents the optimal model. Visually, this generator produces superior illumination and contrast, but structurally, it remains less optimal. In contrast, the other two generators have better structure but still lack optimal illumination and contrast.
+
+### Downstream Task: Object Detection
+
+
+Based on the evaluation metrics, a precision increase of +0.09 was observed in the YOLOv7 model with the BDD+SR dataset using the UNet-ViT+Upsampling generator, compared to the BDD dataset, indicating the model's ability to avoid false positives. A significant recall increase of +0.258 shows the model's accuracy in detecting true positives. The +0.288 improvement in mAP@.5 suggests good overall prediction quality across all classes. The f1-score improvement of +0.203 demonstrates the model's balanced performance without significant trade-offs.
+
+The synthetic nighttime SR images from the DSR-CycleGAN framework with the UNet-ViT+ESRGAN+ generator better detect ground truth proportions compared to UNet-ViT+Upsampling due to sharper features in the generated images. However, other evaluation metrics were less favorable for this generator compared to UNet-ViT+Upsampling.
+
+For the unpaired SISR framework and the UNet-ViT+EnlightenGAN generator, no significant performance improvement was observed in YOLOv7 compared to the baseline with the BDD dataset. The generated images did not accurately represent nighttime scenes, leading to poorer generalization during YOLOv7 training, resulting in decreased performance.
+
+<table><thead>
+  <tr>
+    <th colspan="2" rowspan="2"></th>
+    <th rowspan="2">Precision</th>
+    <th rowspan="2">Recall</th>
+    <th rowspan="2">mAP@.5</th>
+    <th rowspan="2">F1-Score</th>
+  </tr>
+  <tr>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td colspan="2">BDD Dataset</td>
+    <td>0,753 </td>
+    <td>0,462 </td>
+    <td>0,507 </td>
+    <td>0,573</td>
+  </tr>
+  <tr>
+    <td>Unpaired SISR</td>
+    <td>BDD+SR Dataset (UNet-Vit+ESRGAN+)</td>
+    <td>0,652 (-0,101) </td>
+    <td>0,482 (+0,02) </td>
+    <td>0,543 (+0,036) </td>
+    <td>0,554 (-0,019)</td>
+  </tr>
+  <tr>
+    <td rowspan="3">DSR-CycleGAN</td>
+    <td>BDD+SR Dataset (UNet-Vit+Upsampling)</td>
+    <td>0,843 (+0,09) </td>
+    <td>0,72 (+0,258) </td>
+    <td>0,796 (+0,289)</td>
+    <td>0,776 (+0,203)</td>
+  </tr>
+  <tr>
+    <td>BDD+SR Dataset (UNet-Vit+ESRGAN+)</td>
+    <td>0,794 (+0,041) </td>
+    <td>0,735 (+0,273)</td>
+    <td>0,795 (+0,288)</td>
+    <td>0,763 (+0,19)</td>
+  </tr>
+  <tr>
+    <td>BDD+SR Dataset (UNet-Vit+EnlightenGAN)</td>
+    <td>0,703 (-0,05) </td>
+    <td>0,512 (+0,05) </td>
+    <td>0,554 (+0,047)</td>
+    <td>0,592 (+0,019)</td>
+  </tr>
+</tbody></table>
