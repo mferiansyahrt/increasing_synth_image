@@ -216,10 +216,10 @@ In this experiment, the optimal results were achieved using the DSR-CycleGAN fra
   <tr>
     <td rowspan="3">DSR-CycleGAN</td>
     <td>UNet-ViT + Upsampling</td>
-    <td>30,4</td>
-    <td>0,485</td>
-    <td>33,4</td>
-    <td>0,468</td>
+    <td><b>30,4</b></td>
+    <td><b>0,485</b></td>
+    <td><b>33,4</b></td>
+    <td><b>0,468</b></td>
   </tr>
   <tr>
     <td>UNet-ViT + ESRGAN+</td>
@@ -283,38 +283,38 @@ For the unpaired SISR framework and the UNet-ViT+EnlightenGAN generator, no sign
 <tbody>
   <tr>
     <td colspan="2">BDD Dataset</td>
-    <td>0,753 </td>
-    <td>0,462 </td>
-    <td>0,507 </td>
+    <td>0,753</td>
+    <td>0,462</td>
+    <td>0,507</td>
     <td>0,573</td>
   </tr>
   <tr>
     <td>Unpaired SISR</td>
     <td>BDD+SR Dataset (UNet-Vit+ESRGAN+)</td>
-    <td>0,652 (-0,101) </td>
-    <td>0,482 (+0,02) </td>
-    <td>0,543 (+0,036) </td>
+    <td>0,652 (-0,101)</td>
+    <td>0,482 (+0,02)</td>
+    <td>0,543 (+0,036)</td>
     <td>0,554 (-0,019)</td>
   </tr>
   <tr>
     <td rowspan="3">DSR-CycleGAN</td>
     <td>BDD+SR Dataset (UNet-Vit+Upsampling)</td>
-    <td>0,843 (+0,09) </td>
-    <td>0,72 (+0,258) </td>
-    <td>0,796 (+0,289)</td>
-    <td>0,776 (+0,203)</td>
+    <td><b>0,843 (+0,09)</b></td>
+    <td>0,72 (+0,258)</td>
+    <td><b>0,796 (+0,289)</b></td>
+    <td><b>0,776 (+0,203)</b></td>
   </tr>
   <tr>
     <td>BDD+SR Dataset (UNet-Vit+ESRGAN+)</td>
-    <td>0,794 (+0,041) </td>
-    <td>0,735 (+0,273)</td>
+    <td>0,794 (+0,041)</td>
+    <td><b>0,735 (+0,273)</b></td>
     <td>0,795 (+0,288)</td>
     <td>0,763 (+0,19)</td>
   </tr>
   <tr>
     <td>BDD+SR Dataset (UNet-Vit+EnlightenGAN)</td>
-    <td>0,703 (-0,05) </td>
-    <td>0,512 (+0,05) </td>
+    <td>0,703 (-0,05)</td>
+    <td>0,512 (+0,05)</td>
     <td>0,554 (+0,047)</td>
     <td>0,592 (+0,019)</td>
   </tr>
