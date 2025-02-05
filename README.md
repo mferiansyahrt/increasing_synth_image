@@ -82,4 +82,20 @@ In this stage, the image super-resolution model was developed using two framewor
 
 Various image super-resolution models were explored, each paired with a corresponding upscaling model. As previously explained, the UNet-ViT generator was used for domain transfer, while the upscaling model handled spatial resolution enhancement.
 
+### Unpaired Single Image Super-Resolution (SISR)
+
+<div align="center">
+    <a href="./">
+        <img src="./Figures/new_arsitektur_unpairedSISR_git.png" width="74%"/>
+    </a>
+</div>
+
+### Direct Super-Resolution CycleGAN (DSR-CycleGAN)
+
+<div align="center">
+    <a href="./">
+        <img src="./Figures/dsrcgan_revisi_git.png" width="74%"/>
+    </a>
+</div>
+
 ## Downstream Task: Object Detection
