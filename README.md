@@ -156,3 +156,39 @@ The BDD and BDD+SR datasets focus on detecting objects from 10 classes, includin
 </div>
 
 The experiment design for the nighttime object detection downstream task using YOLOv7 is outlined. First, the dataset is split into training and testing sets. The variations in the training dataset are based on the datasets listed, while the testing set consists of 100 real nighttime images. Using the same testing dataset across different training dataset variations aims to evaluate the impact of additional data on the model's ability to detect objects at night. This reflects a scenario where augmented data serves as a supplementary component. However, in real-world scenarios, object detection at night would rely on actual nighttime images. After training, the model is evaluated both quantitatively and qualitatively. Several hyperparameters are adjusted during the training process, with a summary of these settings provided.
+
+<div align="center">
+<table><thead>
+  <tr>
+    <th>Hyperparameter</th>
+    <th></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Epoch</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>Learning Rate </td>
+    <td>0,01</td>
+  </tr>
+  <tr>
+    <td>Batch Size </td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>IoU Threshold</td>
+    <td>0,65</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+## Results
+
+### Super Resolution Method
+
+In this experiment, the optimal results were achieved using the DSR-CycleGAN framework with a UNet-ViT+Upsampling generator. Upsampling is a simple convolution method that can increase image resolution, essentially a transpose convolution. The use of the ESRGAN+ and EnlightenGAN generators resulted in both an increase and decrease in FID and SSIM values, respectively. This is due to the complexity of the architecture when combining the UNet-ViT generator with ESRGAN+ or EnlightenGAN, which leads to overly deep layers and potential vanishing gradients. 
+
+
+The unpaired SISR framework performed the worst in both training and testing, in terms of FID and SSIM. However, its SSIM performance was slightly better than UNet-ViT+EnlightenGAN in DSR-CycleGAN. In this experiment, the unpaired SISR generated synthetic nighttime SR images from a generator that produced low-resolution images. In other words, the super-resolution part of unpaired SISR was trained using pairs of synthetic low-resolution nighttime images and high-resolution nighttime images.
