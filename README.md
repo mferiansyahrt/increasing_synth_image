@@ -3,15 +3,24 @@
 This project employs image processing approach as explained on [Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation).
 
 ## Dataset
-The experimental design of this research consists of performing deep image-to-image translation using a semi-supervised CycleGAN. Semi-supervised GAN usesboth paired and unpaired images. For paired data, we used the synthetic nighttime dataset. For unpaired data, we use the BDD dataset. This results in 70 paired images and 100 unpaired images, respectively, for utilizing semi-supervised CycleGAN.
+
+### Super Resolution Method
+
+This dataset is the same as explained on Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation). The only difference is that the target image has a resolution of 512 x 512 pixels. While the input is 256 x 256 pixels.
 
 <div align="center">
     <a href="./">
-        <img src="github.com/mferiansyahrt/day_to_night_comparation/tree/main/figure/syn_dataset.png" width="65%"/>
+        <img src="./Figures/syn_dataset.png" width="65%"/>
     </a>
 </div>
 
-## Super Resolution Method
+### Downstream Task: Object Detection
+
+The dataset used on Downstream Task for Object Detection comes from Berkley Deep Drive (BDD Dataset) [BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning](https://arxiv.org/pdf/1805.04687). The removal cause of dataset from image processing approach will be discussed later.
+
+## Methods
+
+### Super Resolution Method
 
 The nighttime images were downscaled to 512 × 512 pixels and used as target data, while the low-resolution daytime images had a size of 256 × 256 pixels. After preparing the dataset, it was divided into training and testing sets. The model was then built and trained using the training set with an unpaired SISR approach and the proposed Direct Super-Resolution CycleGAN (DSR-CycleGAN) method. This process generated super-resolved synthetic nighttime images from low-resolution daytime inputs. The trained model was later tested using the testing set, with its performance evaluated both quantitatively and qualitatively.
 
@@ -91,7 +100,7 @@ In this stage, the image super-resolution model was developed using two framewor
 
 Various image super-resolution models were explored, each paired with a corresponding upscaling model. As previously explained, the UNet-ViT generator was used for domain transfer, while the upscaling model handled spatial resolution enhancement.
 
-### Unpaired Single Image Super-Resolution (SISR)
+#### Unpaired Single Image Super-Resolution (SISR)
 
 Traditional Single-Image Super Resolution (SISR) methods typically rely on paired datasets, where high-resolution (HR) images are downscaled to create corresponding low-resolution (LR) versions. In this study, we utilize both paired and unpaired datasets, employing an unpaired SISR framework based on a semi-supervised Generative Adversarial Network (GAN) approach. Unlike conventional unpaired SISR methods that operate within the same domain—such as enhancing the resolution of nighttime images by mapping from low to high resolution within the nighttime domain—our research focuses on mapping daytime images to the nighttime domain while simultaneously increasing their resolution.
 
@@ -103,7 +112,7 @@ Traditional Single-Image Super Resolution (SISR) methods typically rely on paire
 
 A common issue with paired SISR methods is that the downscaling process, often performed using mathematical operations like bicubic interpolation, may not effectively generate super-resolved images in unpaired data scenarios. Therefore, this study adopts an unpaired SISR approach to develop a Super-Resolution (SR) model, particularly considering the unpaired nature of the combined dataset, which includes the BDD dataset. In this framework, we employ an L1 loss function for Lrec.
 
-### Direct Super-Resolution CycleGAN (DSR-CycleGAN)
+#### Direct Super-Resolution CycleGAN (DSR-CycleGAN)
 The proposed Direct Super-Resolution CycleGAN (DSR-CycleGAN) shares a similar overall structure with the standard CycleGAN architecture. However, in this study, the DSR-CycleGAN introduces specific modifications. While some research employs discriminators for both high-resolution (HR) and low-resolution (LR) images, and others use LR discriminators within the same domain, this study applies the HR discriminator exclusively to different domains.
 
 <div align="center">
@@ -114,7 +123,7 @@ The proposed Direct Super-Resolution CycleGAN (DSR-CycleGAN) shares a similar ov
 
 In this architecture, SRDay and SRNight consist of a UNet-ViT generator paired with various upsampling models. The UNet-ViT generator utilizes 12 transformer blocks and employs an L1 loss function. The SRNight model processes LR daytime images with a resolution of 256 × 256 pixels, outputting synthetic SR nighttime images at 512 × 512 pixels; conversely, the SRDay model performs the reverse operation. Both DDay and DNight discriminators use a 70 × 70 PatchGAN architecture with L2 loss, receiving HR images as real labels and SR images as fake labels. Downscaling methods such as bicubic interpolation and convolutional downsampling are mathematical operations applied sequentially. Bicubic interpolation is chosen for producing smoother-textured LR images, while convolutional downsampling is employed to reduce noise artifacts, especially when the framework is trained with perceptual loss
 
-## Downstream Task: Object Detection
+### Downstream Task: Object Detection
 
 Several variations of image super-resolution models were used to generate synthetic nighttime images, which served as augmented data for training the YOLOv7 model for object detection in nighttime images. The dataset used for training consisted of a mix of the BDD dataset and synthetic nighttime images from various SR models. Conventional synthetic datasets were not used because they lacked enough detectable object classes.
 
