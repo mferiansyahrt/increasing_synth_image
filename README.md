@@ -53,7 +53,7 @@ The model was trained end-to-end without using a pre-trained model, ensuring it 
 </table>
 </div>
 
-In this stage, the image super-resolution model was developed using two frameworks: unpaired SISR and DSR-CycleGAN. The UNet-ViT generator from the UVCGAN model was found to deliver optimal performance. Therefore, this study utilized the UNet-ViT generator for both frameworks to facilitate domain transfer from daytime to nighttime images
+In this stage, the image super-resolution model was developed using two frameworks: unpaired SISR and DSR-CycleGAN. The UNet-ViT generator from the UVCGAN model was found to deliver optimal performance from [Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation) project. Therefore, this study utilized the UNet-ViT generator for both frameworks to facilitate domain transfer from daytime to nighttime images
 
 <div align="center">
 <table><thead>
