@@ -2,6 +2,15 @@
 
 This project employs image processing approach as explained on [Day-to-Night Comparation github](https://github.com/mferiansyahrt/day_to_night_comparation).
 
+## Dataset
+The experimental design of this research consists of performing deep image-to-image translation using a semi-supervised CycleGAN. Semi-supervised GAN usesboth paired and unpaired images. For paired data, we used the synthetic nighttime dataset. For unpaired data, we use the BDD dataset. This results in 70 paired images and 100 unpaired images, respectively, for utilizing semi-supervised CycleGAN.
+
+<div align="center">
+    <a href="./">
+        <img src="https://github.com/mferiansyahrt/day_to_night_comparation/tree/main/figure/syn_dataset.png" width="65%"/>
+    </a>
+</div>
+
 ## Super Resolution Method
 
 The nighttime images were downscaled to 512 × 512 pixels and used as target data, while the low-resolution daytime images had a size of 256 × 256 pixels. After preparing the dataset, it was divided into training and testing sets. The model was then built and trained using the training set with an unpaired SISR approach and the proposed Direct Super-Resolution CycleGAN (DSR-CycleGAN) method. This process generated super-resolved synthetic nighttime images from low-resolution daytime inputs. The trained model was later tested using the testing set, with its performance evaluated both quantitatively and qualitatively.
