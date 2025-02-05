@@ -7,7 +7,7 @@ The experimental design of this research consists of performing deep image-to-im
 
 <div align="center">
     <a href="./">
-        <img src="https://github.com/mferiansyahrt/day_to_night_comparation/tree/main/figure/syn_dataset.png" width="65%"/>
+        <img src="github.com/mferiansyahrt/day_to_night_comparation/tree/main/figure/syn_dataset.png" width="65%"/>
     </a>
 </div>
 
