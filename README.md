@@ -8,7 +8,7 @@ The nighttime images were downscaled to 512 × 512 pixels and used as target dat
 
 <div align="center">
     <a href="./">
-        <img src="./Figures/rev_framework.png" width="79%"/>
+        <img src="./Figures/desain_peningkatan_resolusi_2_git.png" width="79%"/>
     </a>
 </div>
 
